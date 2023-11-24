@@ -1,6 +1,4 @@
-import PeoplePage from '../peoplePage/PeoplePage';
-import styles from './App.module.css';
-
+import PeoplePage from '../peoplePage';
 
 const App = () => {
   return (

@@ -1,23 +1,30 @@
 import { useEffect, useState } from 'react';
 import { getApiResource } from '../../utils/network';
 import { API_PEOPLE } from '../../constants/api';
-import styles from './PeoplePage.module.css';
-import { getPeopleId } from '../../services/getPeopleData'
-const PeoplePage = () => {
+import { getPeopleId, getPeopleImg } from '../../services/getPeopleData'
+import PeopleList from '../../components/PeoplePage/PeopleList';
+import { withErrorApi } from '../../hoc/withErrorApi';
+const PeoplePage = ({ setErrorApi }) => {
     const [people, setPeople] = useState(null)
 
     const getResource = async (url) => {
         const res = await getApiResource(url);
-        
-        const peopleList = res.results.map(({name,url}) => {
-            const id = getPeopleId(url)
-            return { 
-                name, 
-                url 
-            }
-        })
-
-        setPeople(peopleList);
+        if (res) {
+            const peopleList = res.results.map(({name,url}) => {
+                const id = getPeopleId(url)
+                const img = getPeopleImg(id)
+                return {
+                    id,
+                    name,
+                    img
+                }
+            })
+    
+            setPeople(peopleList);
+            setErrorApi(false);
+        } else {
+            setErrorApi(true);
+        }
 
     }
     useEffect(() => {
@@ -26,17 +33,9 @@ const PeoplePage = () => {
 
     return (
         <>
-            {people && (
-                <ul>
-                    {people.map(({name, url}) => ( 
-                        <li className={styles.peopleList} key={name}>
-                            {name}
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {people && <PeopleList people = {people}/>}
         </>
     )
 }
 
-export default PeoplePage
+export default withErrorApi(PeoplePage)

@@ -1,11 +1,11 @@
-import PeoplePage from '../peoplePage';
+import PeoplePage from '@containers/peoplePage';
 
 const App = () => {
-  return (
-    <>
-      <PeoplePage/>
-    </>
-  );
+    return (
+      <>
+        <PeoplePage/>
+      </>
+    );
 }
 
 export default App;

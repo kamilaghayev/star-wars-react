@@ -7,9 +7,10 @@
     --color-dark: #262626;
     --color-light-grey: #B0A8B9;
     --color-dark-grey: #4B4453;
-    --color-purple: #976bdf;
+    --color-purple: #a878f5;
 
     --spacing-medium: 15px;
+    --spacing-small: 7px;
 
     --border-radius-small: 4px;
 
@@ -24,6 +25,8 @@
     --font-size-3xl: 50px;
     --font-size-4xl: 60px;
     --font-size-5xl: 70px;
+
+    --default-background: url(@assets/images/bg-1.jpg)
 }
 
 * {
@@ -35,4 +38,15 @@
 body {
     background-color: var(--color-dark);
     font-family: sans-serif;
+    background-size:cover;
+    background-position: top center;
+    background: var(--default-background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header__text {
+    line-height: 1.7;
+    font-size: var(--font-size-2xl);
+    color: var(--color-purple);
 }

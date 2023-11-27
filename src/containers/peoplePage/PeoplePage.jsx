@@ -36,6 +36,7 @@ const PeoplePage = ({ setErrorApi }) => {
 
     return (
         <>
+            <h1 className='header__text'>Star wars characters</h1>
             {people && <PeopleList people = {people}/>}
         </>
     )

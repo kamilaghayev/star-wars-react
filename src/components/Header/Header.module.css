@@ -1,0 +1,20 @@
+.header__container {
+    padding: var(--spacing-medium) 0;
+}
+.header__menu li{
+    display: inline-block;
+    padding: var(--spacing-small);
+}
+
+.header__menu a {
+    text-decoration: none;
+    color: var(--color-white);
+    padding: var(--spacing-medium);
+    border: 1px solid transparent;
+}
+
+.header__menu :global(a.active) {
+    color: var(--color-purple);
+    border: 1px solid var(--color-purple);
+    border-radius: var(--border-radius-small);
+}

@@ -5,18 +5,20 @@ const App = () => {
     return (
       <>
       <BrowserRouter>
-        <Header/>
+        <div className="container">
+          <Header/>
 
-        <Routes>
-          {routesConfig.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={route.element}
-              exact={route.exact}
-            />
-          ))}
-        </Routes>
+          <Routes>
+            {routesConfig.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                element={route.element}
+                exact={route.exact}
+              />
+            ))}
+          </Routes>
+        </div>
       </BrowserRouter>
       </>
     );

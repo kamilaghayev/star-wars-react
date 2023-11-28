@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    color: var(--color-light-grey);
+}
+
+.info {
+    font-size: var(--font-size-m);
+    color: var(--color-purple);
+    text-align: center;
+}
+.img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.img img {
+    width: 250px;
+}

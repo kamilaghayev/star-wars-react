@@ -7,8 +7,9 @@
     --color-dark: #262626;
     --color-light-grey: #B0A8B9;
     --color-dark-grey: #4B4453;
-    --color-purple: #a878f5;
+    --color-purple: #ab7ff1;
 
+    --spacing-large: 20px;
     --spacing-medium: 15px;
     --spacing-small: 7px;
 
@@ -26,7 +27,14 @@
     --font-size-4xl: 60px;
     --font-size-5xl: 70px;
 
-    --default-background: url(@assets/images/bg-1.jpg)
+    --default-background: url(@assets/images/bg-1.jpg);
+
+    --screen-lg: 1440px;
+    --screen-lm: 1024px;
+    --screen-ls: 768px;
+    --screen-ml: 540px;
+    --screen--mm: 425px;
+    --screen-ms: 320px;
 }
 
 * {
@@ -36,17 +44,43 @@
 }
 
 body {
-    background-color: var(--color-dark);
-    font-family: sans-serif;
-    background-size:cover;
-    background-position: top center;
     background: var(--default-background);
-    background-repeat: no-repeat;
+    font-family: sans-serif;
+    background-color: var(--color-light-grey);
     background-attachment: fixed;
+    background-size:cover;
 }
 
 .header__text {
     line-height: 1.7;
     font-size: var(--font-size-2xl);
     color: var(--color-purple);
+}
+
+.container {
+    width: var(--screen-lg);
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        width: var(--screen-lm);
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        width: var(--screen-ls);
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        width: var(--screen-ml);
+    }
+}
+
+@media (max-width: 540px) {
+    .container {
+        width: 100%;
+        padding: 0 var(--spacing-large);
+    }
 }

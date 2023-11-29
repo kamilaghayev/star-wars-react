@@ -1,8 +1,13 @@
 import styles from './UIButton.module.css';
 
-const PrimaryBtn = ({theme='dark', ...props}) => {
+const PrimaryBtn = ({children, ...props}) => {
   return (
-    <button className={styles.primary__btn} {...props}>{props.children}</button>
+    <button 
+      className={styles.primary__btn} 
+      {...props}
+    >
+      {children}
+    </button>
   )
 }
 

@@ -1,6 +1,7 @@
 import {BrowserRouter, NavLink, Routes, Route } from 'react-router-dom';
 import routesConfig from '@routes/routesConfig';
 import Header from '@components/Header';
+
 const App = () => {
     return (
       <>

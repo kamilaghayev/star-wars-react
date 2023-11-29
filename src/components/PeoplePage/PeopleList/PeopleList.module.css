@@ -1,10 +1,11 @@
 .list__container {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-gap: var(--spacing-medium);
     list-style: none;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
     .list__container {
         grid-template-columns: repeat(2,1fr);
     }

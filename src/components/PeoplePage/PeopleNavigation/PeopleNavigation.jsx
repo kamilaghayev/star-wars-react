@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './PeopleNavigation.module.css';
+import PrimaryBtn from '@UI/UIButton/PrimaryBtn';
 
 const PeopleNavigation = ({
   getResource,
@@ -14,22 +15,20 @@ const PeopleNavigation = ({
   return (
     <div className={styles.btn__container}>
       <Link to={`/people/?page=${counterPage-1}`}>
-        <button 
+        <PrimaryBtn 
           onClick={getPrevPage} 
           disabled={!prevPage}
-          className={styles.nav__btn}
         >
           previous
-        </button>
+        </PrimaryBtn>
       </Link>
       <Link to={`/people/?page=${counterPage+1}`}>
-        <button 
+        <PrimaryBtn 
           onClick={getNextPage}
           disabled={!nextPage}
-          className={styles.nav__btn}
         >
           next
-        </button>
+        </PrimaryBtn>
       </Link>
     </div>
   )

@@ -1,0 +1,29 @@
+.person__info {
+    background-color:var(--color-purple);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.person__info li {
+    width: calc(100%/2);
+    padding: var(--spacing-medium) 0;
+    color: var(--color-white);
+    font-size: var(--font-size-s);
+    line-height: var(--font-size-m);
+}
+
+
+@media (max-width: 280px) {
+    .person__info li {
+        width: calc(100%/1);
+    }
+}
+
+.person__info li span {
+    display: inline-block;
+    color: var(--color-dark);
+    font-size: var(--font-size-l);
+    padding-top: var(--spacing-small);
+}

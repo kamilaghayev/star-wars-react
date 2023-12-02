@@ -9,10 +9,12 @@
     --color-dark-grey: #4B4453;
     --color-purple: #ab7ff1;
 
+    --spacing-container: 45px;
     --spacing-large: 20px;
     --spacing-medium: 15px;
     --spacing-small: 7px;
 
+    --border-radius-medium: 8px;
     --border-radius-small: 4px;
 
     --font-family-main: 'Noto Sans';
@@ -83,4 +85,8 @@ body {
         width: 100%;
         padding: 0 var(--spacing-large);
     }
+}
+
+li {
+    list-style: none;
 }

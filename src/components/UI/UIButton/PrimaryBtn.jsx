@@ -1,9 +1,10 @@
+import cn from "classnames";
 import styles from './UIButton.module.css';
 
 const PrimaryBtn = ({children, ...props}) => {
   return (
     <button 
-      className={styles.primary__btn} 
+      className={cn(styles.btn, styles.primary__btn)} 
       {...props}
     >
       {children}

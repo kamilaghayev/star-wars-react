@@ -1,0 +1,13 @@
+.films__list a{
+    color: var(--color-white);
+}
+.films__episode {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    padding: var(--spacing-small);
+    margin: var(--spacing-small) 0;
+    margin-right: var(--spacing-small);
+    border-radius: var(--border-radius-small);
+}

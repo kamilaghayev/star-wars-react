@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState , lazy, Suspense } from "react";
 import { useParams } from "react-router";
 
 import styles from "./PersonPage.module.css";
@@ -9,8 +9,11 @@ import { getPeopleImg } from "@services/getPeopleData";
 import { API_PERSON } from "@constants/api";
 import PersonCard from "@components/PersonPage/PersonCard";
 import PersonInfo from "@components/PersonPage/PersonInfo";
-import GoBack from "../../components/GoBack";
-import PersonFilms from "../../components/PersonPage/PersonFilms";
+import GoBack from "@components/GoBack";
+import UILoading from "@components/UI/UILoading";
+
+const PersonFilms = lazy(()=> import("@components/PersonPage/PersonFilms"))
+
 
 const PersonPage = ({ setErrorApi }) => {
     const [ personInfo, setPersonInfo ] = useState(null);
@@ -50,13 +53,16 @@ const PersonPage = ({ setErrorApi }) => {
     return (
         <section className={styles.person__page}>
             <GoBack />
-            
             {personMain && <h1>{personMain.name}</h1>}
-
+            
             <div className={styles.person__info}>
                 {personMain && <PersonCard person={personMain}/>}
                 {personInfo && <PersonInfo personInfo={personInfo}/>}
-                {personFilms && <PersonFilms films={personFilms}/>}
+                {personFilms && (
+                    <Suspense fallback={<UILoading/>}>
+                        <PersonFilms films={personFilms}/>
+                    </Suspense>
+                )}
             </div>
         </section>
     )

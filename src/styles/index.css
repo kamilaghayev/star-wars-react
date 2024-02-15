@@ -29,7 +29,7 @@
     --font-size-5xl: 70px;
 
     --default-background: url(@assets/images/bg-1.jpg);
-
+    
     --screen-lg: 1440px;
     --screen-lm: 1024px;
     --screen-ls: 768px;

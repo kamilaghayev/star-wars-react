@@ -1,20 +1,20 @@
-import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
-
+import { ReactComponent as MenuIcon } from '@assets/icons/menu-icon.svg';
+import { useState } from 'react';
+import cn from 'classnames';
+import HeaderNav from './HeaderNav';
 const Header = () => {
+    const [ toggleMenu, setToggleMenu ] = useState(false);
     return (
         <div className={styles.header__container}>
-            <ul className={styles.header__menu}>
-                <li>
-                    <NavLink to='/'>Home</NavLink>
-                </li>
-                <li>
-                    <NavLink to='/people/?page=1'>People</NavLink>
-                </li>
-                <li>
-                    <NavLink to='not-found'>Not Found</NavLink>
-                </li>
-            </ul>
+            <MenuIcon 
+                className={styles.menu__icon}
+                onClick={()=> setToggleMenu(!toggleMenu)}
+            />
+            <HeaderNav css={
+                toggleMenu ? cn(styles.header__menu, styles.menu__active)
+                : styles.header__menu
+            }/>
         </div>
     )
 }
